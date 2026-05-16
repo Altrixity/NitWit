@@ -1,4 +1,21 @@
 header {
-    display: flex;
-    align-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  background-color:pink;
+  color:white;
+  border-radius:50px;
+  margin-left:250px;
+  margin-right:250px;
+}
+.NoticeBox {
+  margin-left:450px;
+  margin-right:450px;
+  border-radius:50px;
+  background-color:pink;
+  text-align:center;
+  color:white;
+  margin-top:50px;
 }
