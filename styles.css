@@ -9,10 +9,12 @@ header {
   border-radius:50px;
   margin-left:250px;
   margin-right:250px;
+  padding-bottom: 50px;
+  padding-top:50px;
 }
 .NoticeBox {
-  margin-left:450px;
-  margin-right:450px;
+  margin-left:400px;
+  margin-right:400px;
   border-radius:50px;
   background-color:pink;
   text-align:center;
