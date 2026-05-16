@@ -4,19 +4,22 @@ header {
   justify-content: center;
   gap: 12px;
   text-align: center;
-  background-color:pink;
-  color:white;
+  background-color:rgb(191, 2, 191);
+  color:rgb(255, 255, 255);
   border-radius:50px;
   margin-left:250px;
   margin-right:250px;
   padding-bottom: 50px;
   padding-top:50px;
 }
+body {
+    background-color: black;
+}
 .NoticeBox {
   margin-left:400px;
   margin-right:400px;
   border-radius:50px;
-  background-color:pink;
+  background-color:rgb(191, 2, 191);
   text-align:center;
   color:white;
   margin-top:50px;
