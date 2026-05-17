@@ -12,27 +12,49 @@
       <div class="NoticeBox">
         <h1>Nitwit is still under development</h1>
       </div>
-      <div class="app-container">
-  <div class="box left-box">
-    <h2>Blah blah blah</h2>
-  </div>
-
-  <div class="box right-box">
-    <div class="tabs-container">
-      <button class="tab-btn active" id="btn-1">button</button>
-      <button class="tab-btn" id="btn-2">button 2</button>
-    </div>
-    <div class="dynamic-content" id="dynamic-text">
+      <div class="center-wrapper">
+  <div class="app-container">
+    <div class="box left-box">
       <h2>Blah blah blah</h2>
+    </div>
+
+    <div class="box right-box">
+      <div class="tabs-container">
+        <button class="tab-btn active" id="btn-1">button</button>
+        <button class="tab-btn" id="btn-2">button 2</button>
+      </div>
+      
+      <div class="content-state active" id="content-1">
+        <h2>Blah blah blah</h2>
+      </div>
+
+      <div class="content-state" id="content-2">
+        <h2>blah blah blah 2</h2>
+        <p>fsfsf<br>f<br>a<br>f<br>g<br>a<br>g</p>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000000;
+  }
+
+  .center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+  }
+
   .app-container {
     display: flex;
     gap: 40px;
-    background-color: #000000;
     padding: 50px;
     font-family: sans-serif;
   }
@@ -72,11 +94,19 @@
     background-color: #bc00bc;
   }
 
-  .dynamic-content h2 {
+  .content-state {
+    display: none;
+  }
+
+  .content-state.active {
+    display: block;
+  }
+
+  .content-state h2 {
     margin-top: 0;
   }
 
-  .dynamic-content p {
+  .content-state p {
     margin: 20px 0 0 0;
     line-height: 1.4;
   }
@@ -85,27 +115,21 @@
 <script>
   const button1 = document.getElementById('btn-1');
   const button2 = document.getElementById('btn-2');
-  const contentArea = document.getElementById('dynamic-text');
-
-  const content1 = `
-    <h2>Blah blah blah</h2>
-  `;
-
-  const content2 = `
-    <h2>blah blah blah 2</h2>
-    <p>fsfsf<br>f<br>a<br>f<br>g<br>a<br>g</p>
-  `;
+  const content1 = document.getElementById('content-1');
+  const content2 = document.getElementById('content-2');
 
   button1.addEventListener('click', () => {
-    contentArea.innerHTML = content1;
     button1.classList.add('active');
     button2.classList.remove('active');
+    content1.classList.add('active');
+    content2.classList.remove('active');
   });
 
   button2.addEventListener('click', () => {
-    contentArea.innerHTML = content2;
     button2.classList.add('active');
     button1.classList.remove('active');
+    content2.classList.add('active');
+    content1.classList.remove('active');
   });
 </script>
     </body>
