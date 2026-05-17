@@ -40,31 +40,31 @@
   html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
     background-color: #000000;
   }
 
   .center-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    align-items: flex-start;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .app-container {
     display: flex;
-    gap: 40px;
-    padding: 50px;
+    gap: 60px;
+    padding: 60px 60px 80px 60px;
     font-family: sans-serif;
   }
 
   .box {
     background-color: #bc00bc;
     color: #ffffff;
-    width: 400px;
-    min-height: 450px;
-    padding: 30px;
+    width: 550px;
+    min-height: 650px;
+    padding: 45px;
+    font-size: 22px;
     box-sizing: border-box;
     position: relative;
   }
@@ -75,18 +75,19 @@
 
   .tabs-container {
     position: absolute;
-    top: -40px;
+    top: -55px;
     left: 0;
     display: flex;
-    gap: 15px;
+    gap: 20px;
   }
 
   .tab-btn {
     background-color: #940094;
     color: #000000;
     border: none;
-    padding: 8px 24px;
-    font-size: 16px;
+    padding: 12px 36px;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
   }
 
@@ -104,11 +105,12 @@
 
   .content-state h2 {
     margin-top: 0;
+    font-size: 36px;
   }
 
   .content-state p {
-    margin: 20px 0 0 0;
-    line-height: 1.4;
+    margin: 30px 0 0 0;
+    line-height: 1.5;
   }
 </style>
 
