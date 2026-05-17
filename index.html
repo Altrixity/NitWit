@@ -12,44 +12,101 @@
       <div class="NoticeBox">
         <h1>Nitwit is still under development</h1>
       </div>
-      <div class="container">
-
-  <!-- Block 1 -->
-  <div class="box">
-    <textarea placeholder="Type in box 1..."></textarea>
+      <div class="app-container">
+  <div class="box left-box">
+    <h2>Blah blah blah</h2>
   </div>
 
-  <!-- Block 2 (tabs) -->
-  <div class="box">
-
-    <div class="tabs">
-      <button class="active" onclick="switchTab(0)">Tab 1</button>
-      <button onclick="switchTab(1)">Tab 2</button>
-      <button onclick="switchTab(2)">Tab 3</button>
+  <div class="box right-box">
+    <div class="tabs-container">
+      <button class="tab-btn active" id="btn-1">button</button>
+      <button class="tab-btn" id="btn-2">button 2</button>
     </div>
-
-    <div class="tab-content" id="tabContent">
-      This is Tab 1 content.
+    <div class="dynamic-content" id="dynamic-text">
+      <h2>Blah blah blah</h2>
     </div>
-
   </div>
-
 </div>
+
+<style>
+  .app-container {
+    display: flex;
+    gap: 40px;
+    background-color: #000000;
+    padding: 50px;
+    font-family: sans-serif;
+  }
+
+  .box {
+    background-color: #bc00bc;
+    color: #ffffff;
+    width: 400px;
+    min-height: 450px;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .right-box {
+    overflow: visible;
+  }
+
+  .tabs-container {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    display: flex;
+    gap: 15px;
+  }
+
+  .tab-btn {
+    background-color: #940094;
+    color: #000000;
+    border: none;
+    padding: 8px 24px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .tab-btn.active {
+    background-color: #bc00bc;
+  }
+
+  .dynamic-content h2 {
+    margin-top: 0;
+  }
+
+  .dynamic-content p {
+    margin: 20px 0 0 0;
+    line-height: 1.4;
+  }
+</style>
+
 <script>
-const tabs = [
-  "This is Tab 1 content.",
-  "This is Tab 2 content.",
-  "This is Tab 3 content."
-];
+  const button1 = document.getElementById('btn-1');
+  const button2 = document.getElementById('btn-2');
+  const contentArea = document.getElementById('dynamic-text');
 
-function switchTab(index) {
-  document.getElementById("tabContent").textContent = tabs[index];
+  const content1 = `
+    <h2>Blah blah blah</h2>
+  `;
 
-  const buttons = document.querySelectorAll(".tabs button");
-  buttons.forEach((btn, i) => {
-    btn.classList.toggle("active", i === index);
+  const content2 = `
+    <h2>blah blah blah 2</h2>
+    <p>fsfsf<br>f<br>a<br>f<br>g<br>a<br>g</p>
+  `;
+
+  button1.addEventListener('click', () => {
+    contentArea.innerHTML = content1;
+    button1.classList.add('active');
+    button2.classList.remove('active');
   });
-}
+
+  button2.addEventListener('click', () => {
+    contentArea.innerHTML = content2;
+    button2.classList.add('active');
+    button1.classList.remove('active');
+  });
 </script>
     </body>
 </html>
