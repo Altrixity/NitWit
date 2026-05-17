@@ -1,4 +1,3 @@
-
 <html>
     <head>
         <title>Nitwit | Streamline Coding Languages</title>
@@ -68,6 +67,13 @@
     position: relative;
   }
 
+  /* Reset paragraphs inside boxes to have identical top alignment */
+  .box p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
   .right-box {
     overflow: visible;
   }
@@ -100,16 +106,6 @@
 
   .content-state.active {
     display: block;
-  }
-
-  .content-state h2 {
-    margin-top: 0;
-    font-size: 36px;
-  }
-
-  .content-state p {
-    margin: 30px 0 0 0;
-    line-height: 1.5;
   }
 </style>
 
